@@ -19,6 +19,7 @@
     </script>
     <script id="TW_SCRIPT" onload="window.TWIK_SB && window.TWIK_SB()" src="https://cdn.twik.io/tcs.js"></script>
     <title>Document</title>
+    <link id="websiteIcon" rel="icon" href="">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -4182,6 +4183,8 @@ width: 75px;
         })
 
         function eCommerce_functions() {
+            document.querySelector("title").innerHTML = "Reef'n'Surf"
+            document.querySelector("#websiteIcon").href = ""
             closeNav()
             useStyle(eCommerce_style);
             useHTML("eCommerceHTML");
@@ -4269,6 +4272,9 @@ width: 75px;
         }
 
         function newspaper_functions() {
+            document.querySelector("#websiteIcon").href = "garlic2.png"
+            document.querySelector("title").innerHTML = "The Garlic"
+
             closeNav();
             useStyle(newspaper_style);
             useHTML("newspaperHTML");
@@ -4376,6 +4382,9 @@ width: 75px;
         }
 
         function businessSite_functions() {
+            document.querySelector("#websiteIcon").href = ""
+            document.querySelector("title").innerHTML = "&lt;/blockchain&gt;"
+
             closeNav();
             useStyle(businessSite_style);
             useHTML("businessSiteHTML");
