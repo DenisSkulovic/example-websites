@@ -4089,55 +4089,75 @@ width: 75px;
             if (typeof twik_user_data !== "undefined") {
                 if (twik_user_data["calculated_data"]) {
                     let calculated_data = twik_user_data["calculated_data"];
-                    document.querySelector(
+                    document.querySelectorAll(
                             ".condition-test-li-p-browser>small"
-                        ).innerText = calculated_data["browser"] ?
+                        ).forEach((el)=>{
+                            el.innerText = calculated_data["browser"] ?
                         calculated_data["browser"] :
                         "Unknown";
-                    document.querySelector(
+                        })
+                    document.querySelectorAll(
                         ".condition-test-li-p-age>small"
-                    ).innerText = calculated_data["age"] ? calculated_data["age"] : "Unknown";
-                    document.querySelector(
+                    ).forEach((el)=>{
+                        el.innerText = calculated_data["age"] ? calculated_data["age"] : "Unknown";
+                    })
+                    document.querySelectorAll(
                             ".condition-test-li-p-device>small"
-                        ).innerText = calculated_data["device"] ?
+                        ).forEach((el)=>{
+                            el.innerText = calculated_data["device"] ?
                         calculated_data["device"] :
                         "Unknown";
-                    document.querySelector(
+                        })
+                    document.querySelectorAll(
                             ".condition-test-li-p-gender>small"
-                        ).innerText = calculated_data["gender"] ?
+                        ).forEach((el)=>{
+                            el.innerText = calculated_data["gender"] ?
                         calculated_data["gender"] :
                         "Unknown";
-                    document.querySelector(
+                        })
+                    document.querySelectorAll(
                         ".condition-test-li-p-interests>small"
-                    ).innerText = `${
+                    ).forEach((el)=>{
+                        el.innerText = `${
         calculated_data["interests"]
           ? calculated_data["interests"].join(", ")
           : "Unknown"
       }`;
-                    document.querySelector(
+                    })
+                    document.querySelectorAll(
                             ".condition-test-li-p-os>small"
-                        ).innerText = calculated_data["platform"] ?
+                        ).forEach((el)=>{
+                            el.innerText = calculated_data["platform"] ?
                         calculated_data["platform"] :
                         "Unknown";
+                        })
                 }
                 if (twik_user_data["location"]) {
                     let twik_location = twik_user_data["location"];
-                    document.querySelector(
+                    document.querySelectorAll(
                         ".condition-test-li-p-location>small"
-                    ).innerText = `${
+                    ).forEach((el)=>{
+                        el.innerText = `${
         twik_location["city"] ? twik_location["city"] : "Unknown"
       }, ${twik_location["country"] ? twik_location["country"] : "Unknown"}`;
-                    document.querySelector(
+                    })
+                    document.querySelectorAll(
                             ".condition-test-li-p-language>small"
-                        ).innerText = twik_location["iso_code"] ?
+                        ).forEach((el)=>{
+                            el.innerText = twik_location["iso_code"] ?
                         countryList[twik_location["iso_code"]].toUpperCase() :
                         "Unknown";
+                        })
                 }
-                document.querySelector(".condition-test-li-p-schedule>small").innerText =
+                document.querySelectorAll(".condition-test-li-p-schedule>small").forEach((el)=>{
+                    el.innerText =
                     "Unknown";
-                document.querySelector(
+                })
+                document.querySelectorAll(
                     ".condition-test-li-p-traffic-source>small"
-                ).innerText = "Unknown";
+                ).forEach((el)=>{
+                    el.innerText = "Unknown";
+                })
                 console.log("received twik_user_data");
                 clearInterval(waiting_for_twik_json);
             }
