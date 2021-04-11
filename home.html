@@ -13,10 +13,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
     </script>
-    <link id="TW_LINK" href="https://css.twik.io/60643f4bbac0f.css" onload="TWIK_SB()" rel="stylesheet" />
+    <link id="TW_LINK" href="https://css.twik.io/6072ed6a17590.css" onload="TWIK_SB()" rel="stylesheet" />
     <script>
         ! function() {
-            window.TWIK_ID = "60643f4bbac0f", localStorage.tw_init = 1;
+            window.TWIK_ID = "6072ed6a17590", localStorage.tw_init = 1;
             var t = document.documentElement;
             if (window.TWIK_SB = function() {
                     t.style.visibility = "", t.style.opacity = ""
@@ -540,7 +540,6 @@
         <div class="overlay"></div>
 
         <div class="main-content" style="visibility:hidden">
-
 
             <div class="article-section top-non-detailed-section mb-3 mt-3 container d-flex flex-row flex-wrap">
                 <div class="col-12 col-md-6 col-lg-3 col-xl-3">
@@ -4142,17 +4141,15 @@ width: 75px;
                 clearInterval(waiting_for_twik_json);
             }
         };
-        
         let openNav = () => {
-                    document.getElementById("mySidebar").style.width = "250px";
-                    $(".overlay").fadeIn("fast");
-                };
-                /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+            document.getElementById("mySidebar").style.width = "250px";
+            $(".overlay").fadeIn("fast");
+        };
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
         let closeNav = () => {
-                    document.getElementById("mySidebar").style.width = "0";
-                    $(".overlay").fadeOut("fast");
-                };
-        
+            document.getElementById("mySidebar").style.width = "0";
+            $(".overlay").fadeOut("fast");
+        };
         document.querySelectorAll(".eCommerceSite_button").forEach((btn) => {
             btn.addEventListener("click", eCommerce_functions)
         })
@@ -4169,7 +4166,6 @@ width: 75px;
             useHTML("eCommerceHTML");
             jqueryFunctions = () => {
                 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-
                 $(".openbtn").click(openNav);
                 $(".closebtn").click(closeNav);
                 $(".overlay").click(() => {
@@ -4253,7 +4249,6 @@ width: 75px;
 
         function newspaper_functions() {
             closeNav();
-
             useStyle(newspaper_style);
             useHTML("newspaperHTML");
             document.querySelector(".eCommerceSite_button").addEventListener("click", eCommerce_functions)
@@ -4361,7 +4356,6 @@ width: 75px;
 
         function businessSite_functions() {
             closeNav();
-
             useStyle(businessSite_style);
             useHTML("businessSiteHTML");
             document.querySelector(".eCommerceSite_button").addEventListener("click", eCommerce_functions)
