@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    <div id="mySidebar" class="sidebar">
+    <div id="mySidebar" class="sidebar" style="visibility:hidden;">
         <a href="javascript:void(0)" class="closebtn">&times;</a>
         <a href="#" class="navbar-list-item-a eCommerceSite_button">eCommerce Site</a>
         <a href="#" class="navbar-list-item-a newspaperSite_button">Newspaper Site</a>
@@ -4233,6 +4233,8 @@ width: 75px;
                     $(".dropdown-menu-button").css({
                         visibility: "visible",
                     });
+
+                    $("#mySidebar").css({visibility: "visible"})
                 };
                 makeHiddenElementsVisible();
             };
@@ -4349,6 +4351,7 @@ width: 75px;
                     $(".dropdown-menu-button").css({
                         visibility: "visible",
                     });
+                    $("#mySidebar").css({visibility: "visible"})
                 };
                 makeElementsVisible();
             };
@@ -4424,6 +4427,7 @@ width: 75px;
                     $(".particles-wrapper").css({
                         visibility: "visible",
                     });
+                    $("#mySidebar").css({visibility: "visible"})
                 };
                 makeElementsVisible();
             };
