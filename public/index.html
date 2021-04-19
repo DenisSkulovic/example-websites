@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <link id="TW_LINK" href="https://css.twik.io/6072ed6a17590.css" onload="TWIK_SB()" rel="stylesheet" />
+    <link id="TW_LINK" href="https://css.twik.io/607d3e93cc812.css" onload="TWIK_SB()" rel="stylesheet" />
     <script>
         ! function() {
-            window.TWIK_ID = "6072ed6a17590", localStorage.tw_init = 1;
+            window.TWIK_ID = "607d3e93cc812", localStorage.tw_init = 1;
             var t = document.documentElement;
             if (window.TWIK_SB = function() {
                     t.style.visibility = "", t.style.opacity = ""
@@ -4091,34 +4091,34 @@ width: 75px;
                 if (twik_user_data["calculated_data"]) {
                     let calculated_data = twik_user_data["calculated_data"];
                     document.querySelectorAll(
-                            ".condition-test-li-p-browser>small"
-                        ).forEach((el)=>{
-                            el.innerText = calculated_data["browser"] ?
-                        calculated_data["browser"] :
-                        "Unknown";
-                        })
+                        ".condition-test-li-p-browser>small"
+                    ).forEach((el) => {
+                        el.innerText = calculated_data["browser"] ?
+                            calculated_data["browser"] :
+                            "Unknown";
+                    })
                     document.querySelectorAll(
                         ".condition-test-li-p-age>small"
-                    ).forEach((el)=>{
+                    ).forEach((el) => {
                         el.innerText = calculated_data["age"] ? calculated_data["age"] : "Unknown";
                     })
                     document.querySelectorAll(
-                            ".condition-test-li-p-device>small"
-                        ).forEach((el)=>{
-                            el.innerText = calculated_data["device"] ?
-                        calculated_data["device"] :
-                        "Unknown";
-                        })
+                        ".condition-test-li-p-device>small"
+                    ).forEach((el) => {
+                        el.innerText = calculated_data["device"] ?
+                            calculated_data["device"] :
+                            "Unknown";
+                    })
                     document.querySelectorAll(
-                            ".condition-test-li-p-gender>small"
-                        ).forEach((el)=>{
-                            el.innerText = calculated_data["gender"] ?
-                        calculated_data["gender"] :
-                        "Unknown";
-                        })
+                        ".condition-test-li-p-gender>small"
+                    ).forEach((el) => {
+                        el.innerText = calculated_data["gender"] ?
+                            calculated_data["gender"] :
+                            "Unknown";
+                    })
                     document.querySelectorAll(
                         ".condition-test-li-p-interests>small"
-                    ).forEach((el)=>{
+                    ).forEach((el) => {
                         el.innerText = `${
         calculated_data["interests"]
           ? calculated_data["interests"].join(", ")
@@ -4126,37 +4126,37 @@ width: 75px;
       }`;
                     })
                     document.querySelectorAll(
-                            ".condition-test-li-p-os>small"
-                        ).forEach((el)=>{
-                            el.innerText = calculated_data["platform"] ?
-                        calculated_data["platform"] :
-                        "Unknown";
-                        })
+                        ".condition-test-li-p-os>small"
+                    ).forEach((el) => {
+                        el.innerText = calculated_data["platform"] ?
+                            calculated_data["platform"] :
+                            "Unknown";
+                    })
                 }
                 if (twik_user_data["location"]) {
                     let twik_location = twik_user_data["location"];
                     document.querySelectorAll(
                         ".condition-test-li-p-location>small"
-                    ).forEach((el)=>{
+                    ).forEach((el) => {
                         el.innerText = `${
         twik_location["city"] ? twik_location["city"] : "Unknown"
       }, ${twik_location["country"] ? twik_location["country"] : "Unknown"}`;
                     })
                     document.querySelectorAll(
-                            ".condition-test-li-p-language>small"
-                        ).forEach((el)=>{
-                            el.innerText = twik_location["iso_code"] ?
-                        countryList[twik_location["iso_code"]].toUpperCase() :
-                        "Unknown";
-                        })
+                        ".condition-test-li-p-language>small"
+                    ).forEach((el) => {
+                        el.innerText = twik_location["iso_code"] ?
+                            countryList[twik_location["iso_code"]].toUpperCase() :
+                            "Unknown";
+                    })
                 }
-                document.querySelectorAll(".condition-test-li-p-schedule>small").forEach((el)=>{
+                document.querySelectorAll(".condition-test-li-p-schedule>small").forEach((el) => {
                     el.innerText =
-                    "Unknown";
+                        "Unknown";
                 })
                 document.querySelectorAll(
                     ".condition-test-li-p-traffic-source>small"
-                ).forEach((el)=>{
+                ).forEach((el) => {
                     el.innerText = "Unknown";
                 })
                 console.log("received twik_user_data");
@@ -4274,7 +4274,6 @@ width: 75px;
         function newspaper_functions() {
             document.querySelector("#websiteIcon").href = "garlic2.png"
             document.querySelector("title").innerHTML = "The Garlic"
-
             closeNav();
             useStyle(newspaper_style);
             useHTML("newspaperHTML");
@@ -4384,7 +4383,6 @@ width: 75px;
         function businessSite_functions() {
             document.querySelector("#websiteIcon").href = ""
             document.querySelector("title").innerHTML = "&lt;/blockchain&gt;"
-
             closeNav();
             useStyle(businessSite_style);
             useHTML("businessSiteHTML");
@@ -4449,6 +4447,14 @@ width: 75px;
         }
         eCommerce_functions();
     </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.4.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 </body>
 
 </html>
