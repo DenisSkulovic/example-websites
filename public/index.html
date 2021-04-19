@@ -2769,7 +2769,7 @@ padding: 0; /* To remove default left padding */
 
 .footer-menu-ul>li {
 list-style-type: none;
-min-width: 140px;
+min-width: 100px;
 }
 
 .footer-menu-ul>li>a {
@@ -4023,6 +4023,16 @@ font-weight: 900;
 }
 }
 @media screen and (max-width: 450px) {
+
+.openbtn {
+    display: block;
+}
+
+#mySidebar .navbar-list-item-a {
+    font-size: 1.2rem !important;
+    color: white !important;
+}
+
 .logo-wrapper {
 height: 75px;
 width: 75px;
@@ -4038,6 +4048,10 @@ width: 75px;
 }
 .start-mining-email::-webkit-input-placeholder {
     font-size: 1rem !important;
+}
+
+.navbar-list-wrapper {
+    display: none;
 }
 
 .particles-wrapper {
