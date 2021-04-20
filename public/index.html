@@ -60,15 +60,59 @@
                                         <li class="navbar-list-item list-group-item bg-transparent">
                                             <a href="#" class="navbar-list-item-a eCommerceSite_button">eCommerce
                                                 Site</a>
+                                                <div class="mega-menu mega-menu1">
+                                                    <ul>
+                                                        <li>Awesome Boards</li>
+                                                        <li>Cool Boards</li>
+                                                        <li>Edgy Boards</li>
+                                                        <li>Sleek Boards</li>
+                                                        <li>Affordable Boards</li>
+                                                        <li>Expensive Boards</li>
+                                                        <li>Super Cheap Boards</li>
+                                                        <li>Broken Boards</li>
+                                                        <li>Boring Boards</li>
+                                                        <li>Lame Boards</li>
+                                                    </ul>
+                                                </div>
                                         </li>
                                         <li class="navbar-list-item list-group-item bg-transparent">
                                             <a href="#" class="navbar-list-item-a newspaperSite_button">Newspaper
                                                 Site</a>
+                                                <div class="mega-menu mega-menu2">
+                                                    <ul>
+                                                        <li>Blue Boards</li>
+                                                        <li>White Boards</li>
+                                                        <li>Grey Boards</li>
+                                                        <li>Green Boards</li>
+                                                        <li>Golden Boards</li>
+                                                        <li>Black Boards</li>
+                                                        <li>Pointy Boards</li>
+                                                        <li>Sharp Boards</li>
+                                                        <li>Dangerous Boards</li>
+                                                        <li>Nuclear Boards</li>
+                                                        <li>Toxic Boards</li>
+                                                        <li>Mutant Boards</li>
+                                                        <li>Communist Boards</li>
+                                                        <li>Snow Boards</li>
+                                                        <li>Ice Boards</li>
+                                                    </ul>
+                                                </div>
                                         </li>
                                         <li class="navbar-list-item list-group-item bg-transparent">
                                             <a href="#" class="navbar-list-item-a BusinessSite_button">Business Site</a>
+                                            <div class="mega-menu mega-menu3">
+                                                <ul>
+                                                    <li>Swag Boards</li>
+                                                    <li>Awkward Boards</li>
+                                                    <li>Stolen Boards</li>
+                                                    <li>Failure Boards</li>
+                                                    <li>Rainbow Boards</li>
+                                                    <li>Politically Correct Boards</li>
+                                                </ul>
+                                            </div>
                                         </li>
                                     </ul>
+
                                     <div class="dropdown-menu-button mt-2 d-none" style="visibility: hidden">
                                         MENU
                                     </div>
@@ -512,6 +556,7 @@
                                             <a href="#" class="navbar-list-item-a BusinessSite_button">Business Site</a>
                                         </li>
                                     </ul>
+                                    
                                     <div class="dropdown-menu-button mt-2 d-none" style="visibility: hidden">
                                         MENU
                                     </div>
@@ -2640,6 +2685,31 @@
         };
         const eCommerce_style = `
 <style id="eCommerce_style">
+    .mega-menu {
+        position: fixed;
+        visibility: hidden;
+        z-index: 9999999999999999999999;
+        color: white;
+        right: 50%;
+        transform: translateX(50%);
+        padding-top: 15px;
+    }
+    .mega-menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 450px;
+        margin: 0px;
+        padding: 5px;
+        list-style-type: none;
+        background-color: #005471;
+    }
+    .mega-menu li {
+        width: 200px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
     #mySidebar a {
         overflow: hidden;
         white-space: nowrap;
@@ -4100,6 +4170,9 @@ width: 75px;
         }
         // declaring future functions (many functions have same variable names across pages, but with slightly different functionalities)
         let jqueryFunctions;
+        let resizeMegaMenu;
+        let displayMegaMenu;
+        let hideMegaMenu;
         let makeHiddenElementsVisible;
         let addProductViewFunctionality;
         let makeElementsVisible;
@@ -4201,13 +4274,59 @@ width: 75px;
         })
 
         function eCommerce_functions() {
+            resizeMegaMenu = (relevantElement, menu) => {
+                console.log("menu", menu)
+                console.log("relevantElement", relevantElement)
+                let elRect = relevantElement.getBoundingClientRect();
+                console.log(`menu.style.top !== window.scrollY + elRect.bottom + "px"`, menu.style.top !== window.scrollY + elRect.bottom + "px")
+                if (menu.style.top !== window.scrollY + elRect.bottom + "px") {
+                    $(menu).css({top: window.scrollY + elRect.bottom + "px"})
+                    console.log("menu.style.top", menu.style.top)
+                }
+            }
+
+            let eCommerceSite_button = document.querySelector(".navbar-list-container .eCommerceSite_button").parentElement;
+            let newspaperSite_button = document.querySelector(".navbar-list-container .newspaperSite_button").parentElement;
+            let BusinessSite_button = document.querySelector(".navbar-list-container .BusinessSite_button").parentElement;
+            let megamenu1 = document.querySelector(".mega-menu1");
+            let megamenu2 = document.querySelector(".mega-menu2");
+            let megamenu3 = document.querySelector(".mega-menu3");
+
+            displayMegaMenu = (relevantElement, menu) => {
+                resizeMegaMenu(relevantElement, menu)
+                $(menu).css({visibility: "visible"})
+            }
+            hideMegaMenu = (relevantElement, menu) => {
+                $(menu).css({visibility: "hidden"})
+            }
+
+            eCommerceSite_button.addEventListener("mouseover", ()=>{
+                displayMegaMenu(eCommerceSite_button, megamenu1)
+            })
+            newspaperSite_button.addEventListener("mouseover", ()=>{
+                displayMegaMenu(newspaperSite_button, megamenu2)
+            })            
+            BusinessSite_button.addEventListener("mouseover", ()=>{
+                displayMegaMenu(BusinessSite_button, megamenu3)
+            })
+
+            eCommerceSite_button.addEventListener("mouseout", ()=>{
+                hideMegaMenu(eCommerceSite_button, megamenu1)
+            })
+            newspaperSite_button.addEventListener("mouseout", ()=>{
+                hideMegaMenu(newspaperSite_button, megamenu2)
+            })            
+            BusinessSite_button.addEventListener("mouseout", ()=>{
+                hideMegaMenu(BusinessSite_button, megamenu3)
+            })
+
             document.querySelector("title").innerHTML = "Reef'n'Surf"
             document.querySelector("#websiteIcon").href = ""
             closeNav()
             useStyle(eCommerce_style);
             useHTML("eCommerceHTML");
             jqueryFunctions = () => {
-                /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+
                 $(".openbtn").click(openNav);
                 $(".closebtn").click(closeNav);
                 $(".overlay").click(() => {
@@ -4233,8 +4352,9 @@ width: 75px;
                     $(".dropdown-menu-button").css({
                         visibility: "visible",
                     });
-
-                    $("#mySidebar").css({visibility: "visible"})
+                    $("#mySidebar").css({
+                        visibility: "visible"
+                    })
                 };
                 makeHiddenElementsVisible();
             };
@@ -4300,19 +4420,6 @@ width: 75px;
             document.querySelector(".eCommerceSite_button").addEventListener("click", eCommerce_functions)
             document.querySelector(".newspaperSite_button").addEventListener("click", newspaper_functions)
             document.querySelector(".BusinessSite_button").addEventListener("click", businessSite_functions)
-            resizeContentPadding = () => {
-                let main_content = document.querySelector(".main-content");
-                let navbar = document.querySelector(".navbar");
-                if (
-                    main_content.style.height !== window.getComputedStyle(navbar)["height"]
-                ) {
-                    main_content.style.setProperty(
-                        "padding-top",
-                        window.getComputedStyle(navbar)["height"],
-                        "important"
-                    );
-                }
-            };
             jqueryFunctions = () => {
                 /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
                 openNav = () => {
@@ -4351,7 +4458,9 @@ width: 75px;
                     $(".dropdown-menu-button").css({
                         visibility: "visible",
                     });
-                    $("#mySidebar").css({visibility: "visible"})
+                    $("#mySidebar").css({
+                        visibility: "visible"
+                    })
                 };
                 makeElementsVisible();
             };
@@ -4427,7 +4536,9 @@ width: 75px;
                     $(".particles-wrapper").css({
                         visibility: "visible",
                     });
-                    $("#mySidebar").css({visibility: "visible"})
+                    $("#mySidebar").css({
+                        visibility: "visible"
+                    })
                 };
                 makeElementsVisible();
             };
