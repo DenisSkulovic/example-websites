@@ -2693,6 +2693,7 @@
         right: 50%;
         transform: translateX(50%);
         padding-top: 15px;
+        top: 155px;
     }
     .mega-menu ul {
         display: flex;
@@ -4274,16 +4275,6 @@ width: 75px;
         })
 
         function eCommerce_functions() {
-            resizeMegaMenu = (relevantElement, menu) => {
-                console.log("menu", menu)
-                console.log("relevantElement", relevantElement)
-                let elRect = relevantElement.getBoundingClientRect();
-                console.log(`menu.style.top !== window.scrollY + elRect.bottom + "px"`, menu.style.top !== window.scrollY + elRect.bottom + "px")
-                if (menu.style.top !== window.scrollY + elRect.bottom + "px") {
-                    $(menu).css({top: window.scrollY + elRect.bottom + "px"})
-                    console.log("menu.style.top", menu.style.top)
-                }
-            }
 
             let eCommerceSite_button = document.querySelector(".navbar-list-container .eCommerceSite_button").parentElement;
             let newspaperSite_button = document.querySelector(".navbar-list-container .newspaperSite_button").parentElement;
@@ -4293,7 +4284,6 @@ width: 75px;
             let megamenu3 = document.querySelector(".mega-menu3");
 
             displayMegaMenu = (relevantElement, menu) => {
-                resizeMegaMenu(relevantElement, menu)
                 $(menu).css({visibility: "visible"})
             }
             hideMegaMenu = (relevantElement, menu) => {
